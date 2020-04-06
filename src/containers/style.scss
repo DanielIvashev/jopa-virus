@@ -1,0 +1,223 @@
+$linearGradient: linear-gradient(90deg, rgba(69, 69, 69, 1) 0%, rgba(172, 13, 13, 1) 50%, rgba(65, 65, 65, 1) 100%);
+
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: $linearGradient;
+  font-family: 'Baloo 2', cursive;
+}
+
+.firstSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+
+
+  .stage {
+    display: flex;
+
+    .box {
+      align-self: flex-end;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      margin: 0 auto 0 auto;
+      transform-origin: bottom;
+        font-size: 8vw;
+      p {
+        display: flex;
+        justify-content: center;
+        padding-top: 10rem;
+      }
+    }
+
+    .bounce {
+      animation-name: bounce;
+      animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: scale(1, 1) translateY(0);
+      }
+      10% {
+        transform: scale(1.1, .9) translateY(0);
+      }
+      30% {
+        transform: scale(.9, 1.1) translateY(-100px);
+      }
+      50% {
+        transform: scale(1.05, .95) translateY(0);
+      }
+      57% {
+        transform: scale(1, 1) translateY(-7px);
+      }
+      64% {
+        transform: scale(1, 1) translateY(0);
+      }
+      100% {
+        transform: scale(1, 1) translateY(0);
+      }
+    }
+  }
+
+  i {
+    border: solid #212529;
+    border-width: 0 12px 12px 0;
+    display: inline-block;
+    padding: 12px;
+  }
+
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+}
+
+.secondSectionWrapper {
+  > .jumbotron-fluid {
+    border-radius: 3rem;
+    background-color: silver;
+    color: black;
+    text-align: center;
+    div {
+      margin: auto;
+    }
+
+    .date {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 3rem;
+    }
+
+    .otherP {
+      display: flex;
+      text-align: center;
+
+      div {
+        padding-bottom: 2rem;
+      }
+    }
+
+    h1 {
+      display: block;
+      margin: auto 0;
+    }
+
+    img {
+      max-width: 4rem;
+      max-height: 4rem;
+      width: 4rem;
+      height: 4rem;
+      margin: auto 0;
+    }
+
+  }
+}
+
+.thirdSectionWrapper {
+
+  .loader {
+    > div {
+      margin: auto;
+    }
+  }
+  .form {
+    width: 100%;
+    margin: auto;
+    padding: 3rem 10vw;
+    background-color: silver;
+    border-radius: 3rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+input {
+  text-align: center;
+}
+    .form-control:focus {
+      border-color: black;
+      box-shadow: 0 0 0 0.1rem;
+    }
+
+    .text-muted {
+      color: red !important;
+    }
+
+    .error {
+      border-color: red;
+    }
+
+    .error:focus {
+      border-color: red;
+      box-shadow: 0 0 0 0.1rem red;
+    }
+
+    button {
+      text-decoration: none;
+      outline: none;
+      display: inline-block;
+      margin: 10px 20px;
+      position: relative;
+      padding: 10px 30px;
+      border: 2px solid black;
+      color: black;
+      transition: .4s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        border: 2px solid rgba(0, 0, 0, 0);
+        transition: .4s;
+      }
+
+      &:hover::after {
+        border-color: black;
+        width: calc(100% - 10px);
+        height: calc(100% + 12px);
+      }
+    }
+  }
+
+  .card {
+    border-radius: 1rem;
+    background-color: silver;
+
+    .card-body {
+      div {
+        text-align: center;
+        padding: 1rem 0;
+        h5 {
+          padding: 1rem;
+        }
+      }
+    }
+
+    .wrapperCountry {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    img {
+      max-width: 4rem;
+      max-height: 4rem;
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+}
+
+
